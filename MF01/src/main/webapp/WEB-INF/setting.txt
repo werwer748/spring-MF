@@ -1,0 +1,31 @@
+* 깡통 프로젝트 세팅
+
+ JavaSE(standard edition) - 응용소프트웨어를 만드는 구조 -> JavaEE(enterprise edition) - JavaSE 위에서 돌아가는 JavaEE형태로 바꿔서 개발해야함 -> JavaEE 개발환경을 갖춰야함.
+ 톰 캣 서버 만들어야 함. 아파치 -> 톰캣 압축파일 다운로드, 인텔리제이 플러그인 smart tomcat 다운로드
+
+ smart tomcat 사용하여 다운로드받은 톰캣 서버 연결
+ 프로젝트 루트가 되는 폴더 만들어야 함. new directory(패키지아님) => main/webapp
+      ㄴ webapp 밑에 classes(컴파일 된 자바 class 파일 위치)가 필요한데 기본적으로 build 아래에 자동으로 생성되기 때문에 굳이 만들 필요 없음
+      ㄴ webapp/WEB-INF(디렉토리 생성): 웹앱 환경설정 및 라이브러리 위치
+      ㄴ webapp/WEB-INF/lib(디렉토리 생성): 라이브러리
+      ㄴ webapp/WEB-INF/views(디렉토리 생성): 화면 그리는 파일 위치
+      ㄴ webapp/resources(디렉토리 생성): css, js, image ...
+      ㄴ webapp/web.xml(파일): 톰캣 실행 설정 파일
+
+상기 과정 완료시 프로젝트와 톰캣 연결
+
+=== 프로젝트 빌드 세팅에서 java 버전이 맞게 설정되어있는지 체크하는 것도 중요함. ===
+
+컨텍스트를 등록해야함.
+=> 톰캣 서버에 프로젝트를 등록해야 한다. - 톰켓에 contextPath를 등록하면 그 이름을 따라서 톰 캣이 앱을 찾아온다.
+    ㄴ intelliJ => Run => Edit Configurations
+
+상기 과정 완료시 tomcat을 통해 프로젝트가 열리도록 세팅할 수 있다.
+
+Servlet 만들기
+1. compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+2. implementation 'javax.servlet:jstl:1.2'
+라이브러리 설치
+    ㄴ com.example.controller(패키지 생성) => HelloServlet 클래스 파일 생성
+
+HelloServlet 또는 web.xml파일을 통해 맵핑 설정.
