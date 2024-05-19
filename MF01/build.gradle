@@ -13,6 +13,17 @@ dependencies {
     // Servlet, JSTL
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     implementation 'javax.servlet:jstl:1.2'
+
+    // MySql JDBC Driver
+    implementation 'mysql:mysql-connector-java:8.0.28'
+
+    // Lombok
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // MyBatis Framework
+    implementation 'org.mybatis:mybatis:3.5.6'
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

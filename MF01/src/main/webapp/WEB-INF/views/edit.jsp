@@ -18,14 +18,29 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Web Database Programming</h2>
-        <div class="card">
-            <div class="card-header">대갈이!!</div>
-            <div class="card-body">Content</div>
-            <div class="card-footer">MF1탄 강준기</div>
+<div class="container">
+    <h2>Edit Book</h2>
+    <form action="update" method="post">
+        <input type="hidden" name="num" value="${book.num}">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" value="${book.title}">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" value="${book.price}">
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" class="form-control" id="author" name="author" value="${book.author}">
+        </div>
+        <div class="form-group">
+            <label for="page">Page Count:</label>
+            <input type="number" class="form-control" id="page" name="page" value="${book.page}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>

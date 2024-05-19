@@ -6,7 +6,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> <!-- 스트링 조작에 도움 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
@@ -18,14 +18,16 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Web Database Programming</h2>
-        <div class="card">
-            <div class="card-header">대갈이!!</div>
-            <div class="card-body">Content</div>
-            <div class="card-footer">MF1탄 강준기</div>
+<div class="container">
+    <h2>Web Database Programming</h2>
+    <div class="card">
+        <div class="card-header">Error Page</div>
+        <div class="card-body">
+            <p>${errorMessage}</p>
         </div>
+        <div class="card-footer">MF1탄 강준기</div>
     </div>
+</div>
 
 </body>
 </html>

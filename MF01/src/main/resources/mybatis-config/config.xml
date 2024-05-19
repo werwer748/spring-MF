@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis 설정 파일 -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="mybatis-config/db.properties" />
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+
+            <!--
+                ConnectionPOOL 설정
+                기본 설정 10개, 최초연결시 10개 여유분 5개, 모두 사용중일때 대기시간 20초, 커넥션끊는 기본시간 20초
+                JDBC는 close시 커넥션을 끊지만 mybatis는 커넥션 풀을 반납한다.
+                이런 커넥션 관리를 굉장히 효과적으로 관리하는것이 HikariCP(캐치프레이즈가 오버해드가 거의없다는 것)
+            -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+
+                <!-- 연결 풀 설정 -->
+                <property name="poolMaximumActiveConnections" value="20"/> <!-- 너무 많으면 메모리에 부담... -->
+                <property name="poolMaximumIdleConnections" value="5"/>
+                <property name="poolMaximumCheckoutTime" value="30000"/>
+                <property name="poolTimeToWait" value="20000"/>
+
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mybatis-config/mapper/BookMapper.xml"/>
+    </mappers>
+</configuration>

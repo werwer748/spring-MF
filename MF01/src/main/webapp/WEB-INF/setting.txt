@@ -22,6 +22,9 @@
 
 상기 과정 완료시 tomcat을 통해 프로젝트가 열리도록 세팅할 수 있다.
 
+서블릿 간단 정리
+클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술
+
 Servlet 만들기
 1. compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 2. implementation 'javax.servlet:jstl:1.2'
