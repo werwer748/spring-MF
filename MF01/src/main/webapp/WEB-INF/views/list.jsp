@@ -16,9 +16,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+
         function goDel(num) {
             // alert(num)
-            location.href = '/MF01/delete?num='+num;
+            location.href = '/MF01/delete.do?num='+num;
         }
 
         function goRegister() {
@@ -29,12 +30,19 @@
 <body>
 
     <div class="container">
-        <h2>Web Database Programming</h2>
+        <h2>Web MVC Framework Basic</h2>
         <div class="card">
-            <div class="card-header">
-                <span>Book List</span>
-                <!-- 선행학습 -->
-<%--                <a href="add" class="btn btn-primary float-right">Add New Book</a>--%>
+            <div class="card-header" style="justify-content: space-between;">
+                Book List
+<%--                <label>--%>
+                    <select id="listOrder" name="listOrder" onchange="onChangeListOrder()">
+                        <option value="num">번호</option>
+                        <option value="title">제목</option>
+                        <option value="price">가격</option>
+                        <option value="author">저자</option>
+                        <option value="page">페이지수</option>
+                    </select>
+<%--                </label>--%>
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -43,7 +51,7 @@
                             <th>번호</th>
                             <th>제목</th>
                             <th>가격</th>
-                            <th>저장</th>
+                            <th>저자</th>
                             <th>페이지수</th>
                             <th>삭제</th>
                         </tr>
@@ -72,6 +80,12 @@
                     </tbody>
                 </table>
                 <!-- 수업 -->
+                <div>
+                    <label>
+                        <input type="text" placeholder="제목 또는 저자 검색" id="search" name="search" value="" />
+                    </label>
+                    <button class="btn btn-sm btn-primary" id="searchBtn" onclick="onClickSearchBtn()">검색</button>
+                </div>
                 <button
                         class="btn btn-sm btn-primary"
                         onclick="goRegister()"
@@ -83,5 +97,17 @@
         </div>
     </div>
 
+    <script>
+        function onClickSearchBtn() {
+            const search = document.querySelector('#search').value;
+            // console.log('확인', search);
+            location.href = '/MF01/list?search=' + search;
+        }
+
+        // function onChangeListOrder() {
+        //     const listOrder = document.querySelector('#listOrder').value;
+        //     console.log('확인', listOrder);
+        // }
+    </script>
 </body>
 </html>

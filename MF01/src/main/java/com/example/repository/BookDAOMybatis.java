@@ -26,7 +26,7 @@ public class BookDAOMybatis { // DB 연결부 분리하는 리팩토링 (어차�
             }
         }
     */
-    public List<BookDTO> bookList() {
+    public List<BookDTO> bookList(String search) {
         /* // session 분리 리팩토링 전
             SqlSession session = sqlSessionFactory.openSession();
             // selectList: 전체 리스트 가져올 떄 사용 - 인자는 일반적으로 이 메서드명을 써준다.
@@ -37,7 +37,7 @@ public class BookDAOMybatis { // DB 연결부 분리하는 리팩토링 (어차�
 
         try (SqlSession session = MybatisUtil.openSession()) { // try문 종료시 자동으로 close()
 //            return session.selectList("bookList");
-            return session.selectList("com.example.repository.BookDAOMybatis.bookList"); // 더 정확하게 하고 싶으면..
+            return session.selectList("com.example.repository.BookDAOMybatis.bookList", search); // 더 정확하게 하고 싶으면..
         }
     }
 
@@ -90,6 +90,14 @@ public class BookDAOMybatis { // DB 연결부 분리하는 리팩토링 (어차�
         try (SqlSession session = MybatisUtil.openSession()) {
             session.update("com.example.repository.BookDAOMybatis.updateBook", book);
             session.commit();
+        }
+    }
+
+    public int bookUpdate(BookDTO dto) {
+        try (SqlSession session = MybatisUtil.openSession()) {
+            int cnt = session.insert("bookUpdate", dto);
+            session.commit();
+            return cnt;
         }
     }
 }

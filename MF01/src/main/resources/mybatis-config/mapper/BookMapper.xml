@@ -6,8 +6,15 @@
 <!-- namespace에 연결할 DAO를 적어준다.(스프링넘어가면 중요함)/중복되는 SQL문 작성을 방지하기 위해?  -->
 <mapper namespace="com.example.repository.BookDAOMybatis">
 
+<!--    <select id="bookList" resultType="com.example.entity.BookDTO">-->
+<!--        select * from book order by title asc-->
+<!--    </select>-->
     <select id="bookList" resultType="com.example.entity.BookDTO">
-        select * from book order by title asc
+        select * from book
+        where
+        title like concat('%', #{search}, '%')
+        or author like concat ('%', #{search}, '%')
+        order by title asc
     </select>
 
     <!-- 선행학습 -->
@@ -39,9 +46,16 @@
         select * from book where num = #{num}
     </select>
 
+    <!-- 선생학습 -->
     <update id="updateBook">
         update book
         set title = (#{title}), price = (#{price}), author = (#{author}), page = (#{page})
         where num = (#{num})
+    </update>
+    <!-- 수업 -->
+    <update id="bookUpdate">
+        update book
+        set title = #{title}, price = #{price}, author = #{author}, page = #{page}
+        where num = #{num}
     </update>
 </mapper>
