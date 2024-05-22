@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis? SQL Mapping Framework -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace에 연결할 DAO를 적어준다.(스프링넘어가면 중요함)/중복되는 SQL문 작성을 방지하기 위해?  -->
+<mapper namespace="com.example.repository.LoginDAOMybatis">
+    <select id="login" resultType="com.example.entity.CustomerDTO" parameterType="com.example.entity.CustomerDTO">
+        select * from customer
+        where customer_id = #{customer_id} and password = #{password}
+    </select>
+</mapper>

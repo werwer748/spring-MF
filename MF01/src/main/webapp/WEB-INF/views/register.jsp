@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-header">등록화면</div>
             <div class="card-body">
-                <form action="/MF01/register-post" method="post">
+                <form action="/MF01/register-post.do" method="post">
 
                     <div class="form-group">
                         <label for="title">제목:</label>
@@ -46,7 +46,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-sm">등록</button>
-                    <button type="reset" class="btn btn-info btn-sm">취소</button>
+                    <button type="button" class="btn btn-info btn-sm" onclick="location.href='/MF01/list.do'">취소</button>
 
                 </form>
             </div>

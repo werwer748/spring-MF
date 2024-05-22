@@ -32,5 +32,6 @@
     </environments>
     <mappers>
         <mapper resource="mybatis-config/mapper/BookMapper.xml"/>
+        <mapper resource="mybatis-config/mapper/LoginMapper.xml"/>
     </mappers>
 </configuration>

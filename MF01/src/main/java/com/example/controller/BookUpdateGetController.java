@@ -10,16 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/update-get")
-public class BookUpdateGetController extends HttpServlet {
+//@WebServlet("/update-get")
+public class BookUpdateGetController implements Controller {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String requestHandler(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long num = Long.parseLong(req.getParameter("num"));
 
         BookDAOMybatis dao = new BookDAOMybatis();
         BookDTO book = dao.bookView(num);
 
         req.setAttribute("book", book);
-        req.getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req, resp);
+        return "update";
     }
 }

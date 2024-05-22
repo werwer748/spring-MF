@@ -63,7 +63,7 @@
                 switch (e.target.classList[2]) {
                     case "btn-primary":
                         // location.href = "/MF01/list";
-                        form.action = "/MF01/list";
+                        form.action = "/MF01/list.do";
                         if (inputNum) {
                             inputNum.remove();
                         }
@@ -71,12 +71,12 @@
                         break;
                     case "btn-success":
                         // location.href = "/MF01/update-get?num=1";
-                        form.action = "/MF01/update-get";
+                        form.action = "/MF01/update-get.do";
                         form.method = "POST";
                         break;
                     case "btn-warning":
                         // location.href = "/MF01/delete?num=1";
-                        form.action = "/MF01/delete";
+                        form.action = "/MF01/delete.do";
                         form.method = "POST";
                         break;
                 }

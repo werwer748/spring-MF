@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.entity.BookDTO;
+import com.example.entity.CustomerDTO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

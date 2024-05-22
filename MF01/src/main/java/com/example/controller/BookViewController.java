@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/view")
-public class BookViewController extends HelloServlet {
+public class BookViewController implements Controller {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String requestHandler(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Long num = Long.parseLong(req.getParameter("num"));
 
@@ -20,6 +20,7 @@ public class BookViewController extends HelloServlet {
         BookDTO book = dao.bookView(num);
 
         req.setAttribute("book", book);
-        req.getRequestDispatcher("/WEB-INF/views/view.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/WEB-INF/views/view.jsp").forward(req, resp);
+        return "view";
     }
 }
