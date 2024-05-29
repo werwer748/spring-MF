@@ -31,4 +31,4 @@ Servlet 만들기
 라이브러리 설치
     ㄴ com.example.controller(패키지 생성) => HelloServlet 클래스 파일 생성
 
-HelloServlet 또는 web.xml파일을 통해 맵핑 설정.
+Servlet 파일의 @WebServlet 또는 web.xml파일을 통해 맵핑 설정.

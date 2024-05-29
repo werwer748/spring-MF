@@ -1,17 +1,17 @@
 package com.example.frontcontroller;
 
 import com.example.controller.Controller;
-import com.example.controller.HelloServlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("*.do") // list.do, delete.do, update.do 같이 .do로 끝나는 모든 요청을 여기서 받는다.
-public class FrontController extends HelloServlet {
+public class FrontController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // http://localhost:8081/MF01/list.do
