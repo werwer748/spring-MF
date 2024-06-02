@@ -1,0 +1,22 @@
+server:
+  port: 8081 # 포트설정
+
+spring:
+  # JDBC
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/restful
+    username: root
+    password: hugosnodejs
+
+  # JPA
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+#      naming: # ddl-auto의 테이블, 컬럼명 생성 전략 선택
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # 엔티티와 DB 컬럼이름을 똑같이 만들도록함.
+    show-sql: true

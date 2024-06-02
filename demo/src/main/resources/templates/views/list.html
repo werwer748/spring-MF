@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- xmlns:th="http://www.thymeleaf.org" 이게 걸려야 th를 통해 타임리프제공 문법을 사용할 수 있다. -->
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>과일이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="data : ${list}">
+                <th th:text="${data}">과일이름</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
