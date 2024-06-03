@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Customer Reviews</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Review ID</th>
+                <th>Customer ID</th>
+                <th>Book ID</th>
+                <th>Cost</th>
+                <th>Content</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="review: ${reviews}">
+                <td th:text="${review.id}"></td>
+                <td th:text="${review.customer.id}"></td>
+                <td th:text="${review.book.id}"></td>
+                <td th:text="${review.cost}"></td>
+                <td th:text="${review.content}"></td>
+                <td th:text="${#dates.format(review.createdAt, 'yyyy-MM-dd')}"></td>
+        </tbody>
+    </table>
+</body>
+</html>

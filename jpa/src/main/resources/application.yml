@@ -1,0 +1,29 @@
+server:
+  port: 8081
+  servlet:
+    context-path: "/jpa" # "" 없어도 됨
+#  error: # 에러 통일할때 테스트해본거
+#    path: /error
+#    whitelabel:
+#      enabled: false
+
+
+spring:
+  # JDBC
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jpa
+    username: root
+    password: hugosnodejs
+
+  # JPA
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update # DTO(Object)---ORM---TABLE(Entity, R)
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql : true
