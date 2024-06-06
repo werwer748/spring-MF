@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <div th:if="${error}">
+        <p style="color: red;">Login fail! Please try again.</p>
+    </div>
+    <div th:if="${logout}">
+        <p style="color: green;">Success for You're Logout!</p>
+    </div>
+    <!-- loginProcess: 경로로 요청시 시큐리티 필터체인에서 가로채서 로그인처리를 하게 해야 함.-->
+    <!-- 로그인 전이거나 실패하면 로그인 폼이 보여야 함. -->
+    <form th:action="@{/loginProcess}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <!-- 스프링시큐리티는 폼 name을 꼭 username으로 맞춰줘야 한다. -->
+            <input type="text" id="username" name="username" />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <!-- 스프링시큐리티는 폼 name을 꼭 password로 맞춰줘야 한다. -->
+            <input type="password" id="password" name="password" />
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <!-- 로그인이 성공하면 폼은 필요 없음.
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form> -->
+</body>
+</html>

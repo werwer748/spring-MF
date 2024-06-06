@@ -39,7 +39,7 @@ public class Customer {
     private List<Cart> carts;
 
     // 한명의 회원은 여러개의 권한(중복 - Set)을 가지고 있다.
-    @ManyToMany // M:N(다:다) - 별도의 테이블이 필요하다.
+    @ManyToMany // M:N(다:다) - 별도의 테이블이 필요하다. 기본전략은 LAZY - 다대다라서 EAGER로 바꾸면 성능상에 문제가 생길수도...
     @JoinTable(
             name = "member_roles",
             joinColumns = @JoinColumn(name = "customer_id"),
