@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/js/login.js}"></script>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li id="userMenu" style="display: none;"><a href="#">User Menu</a></li>
+        <li id="managerMenu" style="display: none;"><a href="#">Manager Menu</a></li>
+        <li id="adminMenu" style="display: none;"><a href="#">Admin Menu</a></li>
+    </ul>
+    <hr />
+    <form id="loginForm">
+        UserId: <input type="text" name="userId" id="userId" /><br/>
+        Password: <input type="password" name="password" id="password" /><br/>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <div id="greeting" style="display: none;">
+        <p>Welcome, <span id="userIdDisplay"></span>!</p>
+        <button id="logoutBtn" type="button" onclick="logout()">Logout</button>
+    </div>
+</body>
+</html>

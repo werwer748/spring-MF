@@ -1,0 +1,8 @@
+- npm install -g yarn
+- npm install @babel/plugin-proposal-private-property-in-object --save-dev
+- npm add --save styled-components
+- yarn add react-router-dom or npm i react-router-dom
+
+- yarn add redux react-redux or npm install react-redux,npm install redux
+- npm install @reduxjs/toolkit react-redux
+- yarn add react-bootstrap bootstrap or npm install react-bootstrap bootstrap
